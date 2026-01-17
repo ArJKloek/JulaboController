@@ -1,3 +1,4 @@
+import asyncio
 from julabo import JulaboCF, connection_for_url
 
 
@@ -17,7 +18,7 @@ async def main():
     # start the device
     started = await dev.is_started()
     if not started:
-       await cryo.start()
+       await dev.start()
 
     # define a new set point
     await dev.set_point_1(34.56)
