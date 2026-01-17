@@ -3,7 +3,8 @@ from julabo import JulaboCF, connection_for_url
 
 
 async def main():
-    conn = connection_for_url("tcp://controls.lab.org:17890")
+    # Connect directly to USB serial device
+    conn = connection_for_url("serial:///dev/ttyACM0", baudrate=9600)
     dev = JulaboCF(conn)
     await conn.open()
 
