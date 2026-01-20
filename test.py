@@ -26,8 +26,9 @@ async def main():
     started = await dev.is_started()
     if not started:
        await dev.start()
-
+    else:
+        print("Device already started")
     # define a new set point
-    await dev.set_point_1(34.56)
+    #await dev.set_point_1(34.56)
 
 asyncio.run(main())
