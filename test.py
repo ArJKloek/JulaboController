@@ -16,6 +16,9 @@ async def main():
     temp = await dev.bath_temperature()
     print(f"Bath temperature: {temp} degC")
 
+    power = await dev.heating_power()
+    print(f"Heating power: {power} %")
+    
     # start the device
     started = await dev.is_started()
     if not started:
